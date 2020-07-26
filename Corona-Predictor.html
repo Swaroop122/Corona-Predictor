@@ -1,0 +1,34 @@
+<html>
+<head>
+	<title>Corona-Predictor</title>
+	</head>
+	<body>
+		<h1> Corona Predictor </h1>
+		</br>
+
+<form>
+	<p>Please select your symptoms:</p>
+  <input type="checkbox" id="symptom1" name="symptom1" value="fever">
+  <label for="symptom1"> I have fever</label><br>
+  <input type="checkbox" id="symptom2" name="symptom2" value="drycough">
+  <label for="symptom2"> I have drycough</label><br>
+  <input type="checkbox" id="symptom3" name="symptom3" value="Tiredness">
+  <label for="symptom3"> I have Tiredness</label><br><br>
+  <input type="submit" value="Predict" onclick="predict()">
+  <input type="button" value="COVID-19 online testing form" onclick="location.href='Corona-Test-Form.html';">
+</form>
+<script>
+	function predict()
+	{
+		var symptoms_count =document.querySelectorAll('input[type="checkbox"]:checked').length;
+		if(symptoms_count >= 2)
+			alert("You are under risk. So please fill the COVID-19 online testing form");
+
+		else if(symptoms_count == 1)
+			alert("You have mild symptoms. So please quarantine yourself for coming 14 days");
+		else
+			alert("You are safe from COVID-19");
+	}
+	</script>
+	</body>
+</html>
